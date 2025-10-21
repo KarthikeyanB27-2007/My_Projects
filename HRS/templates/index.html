@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Reservation System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form action="/reserve" method="POST">
+    <h2>Hotel Reservation Form</h2>
+
+    <label>Full Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" required>
+
+    <label>Hotel Name:</label>
+    <input type="text" name="hotel" placeholder="e.g. Sunrise Resort" required>
+
+    <label>Room Type:</label>
+    <select name="room">
+      <option>Standard</option>
+      <option>Deluxe</option>
+      <option>Suite</option>
+    </select>
+
+    <label>Number of Guests:</label>
+    <input type="number" name="guests" min="1" value="1">
+
+    <label>Check-in Date:</label>
+    <input type="date" name="checkin" required>
+
+    <label>Check-out Date:</label>
+    <input type="date" name="checkout" required>
+
+    <button type="submit">Reserve Now</button>
+  </form>
+</body>
+</html>

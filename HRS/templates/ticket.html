@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Reservation Ticket</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eaf0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .ticket {
+      background: white;
+      padding: 30px;
+      width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .details {
+      margin-top: 20px;
+    }
+    .details p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+    .highlight {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 14px;
+      color: gray;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <h2>🏨 Hotel Reservation Ticket</h2>
+    <div class="details">
+      <p><strong>Name:</strong> {{ name }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Phone:</strong> {{ phone }}</p>
+      <p><strong>Hotel:</strong> {{ hotel }}</p>
+      <p><strong>Room Type:</strong> {{ room }}</p>
+      <p><strong>Guests:</strong> {{ guests }}</p>
+      <p><strong>Check-in:</strong> {{ checkin }}</p>
+      <p><strong>Check-out:</strong> {{ checkout }}</p>
+      <p><strong>Total Cost:</strong> ₹{{ total_cost }}</p>
+    </div>
+    <div class="footer">
+      <p>Thank you for booking with us!</p>
+      <p>Enjoy your stay 🌴</p>
+      <!-- ✅ Download as PDF Button -->
+      <button onclick="window.print()">⬇️ Download Ticket (PDF)</button>
+    </div>
+  </div>
+</body>
+</html>
