@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Cricket Ticket</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<style>
+  #ticket {
+    width: 60%;
+    margin: auto;
+    background: #f0f8ff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #004080;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="ticket">
+  <h1>Cricket Match Ticket</h1>
+  <h2>{{ ticket.match }}</h2>
+  <p><strong>Name:</strong> {{ ticket.name }}</p>
+  <p><strong>Date:</strong> {{ ticket.date }}</p>
+  <p><strong>Venue:</strong> {{ ticket.venue }}</p>
+  <p><strong>Seat Number:</strong> {{ ticket.seat_number }}</p>
+  <p><strong>Ticket ID:</strong> {{ ticket.ticket_id }}</p>
+</div>
+
+<button onclick="downloadPDF()">Download Ticket as PDF</button>
+
+<script>
+function downloadPDF() {
+  var element = document.getElementById('ticket');
+  html2pdf().from(element).set({
+    margin: 10,
+    filename: 'Cricket_Ticket_{{ ticket.ticket_id }}.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  }).save();
+}
+</script>
+</body>
+</html>

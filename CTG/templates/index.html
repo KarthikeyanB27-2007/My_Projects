@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cricket Ticket Generator</title>
+</head>
+<body>
+<h1>Generate Your Cricket Ticket</h1>
+<form method="POST" action="/">
+  <label for="name">Your Name:</label><br>
+  <input type="text" name="name" id="name" required><br><br>
+
+  <label for="match">Select Match:</label><br>
+  <select name="match" id="match" required>
+    {% for key, val in matches.items() %}
+      <option value="{{ key }}">{{ val.teams }} ({{ val.date }})</option>
+    {% endfor %}
+  </select><br><br>
+
+  <button type="submit">Generate Ticket</button>
+</form>
+</body>
+</html>
+
