@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<style>
+#resume { width: 80%; margin: auto; padding: 20px; background: #f4f4f4; }
+h2 { color: #2d7ff9; }
+button { margin: 20px auto; display: block; padding: 10px 20px; background: #2d7ff9; color: white; border: none; }
+</style>
+</head>
+<body>
+<div id="resume">
+  <h1>{{ data.name }}</h1>
+  <p><strong>Email:</strong> {{ data.email }}</p>
+  <p><strong>Phone:</strong> {{ data.phone }}</p>
+
+  <h2>Objective</h2>
+  <p>{{ data.objective }}</p>
+
+  <h2>Skills</h2>
+  <ul>
+    {% for skill in data.skills %}
+      <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Education</h2>
+  <p>{{ data.education }}</p>
+
+  <h2>Experience</h2>
+  <p>{{ data.experience }}</p>
+</div>
+
+<button onclick="generatePDF()">Download PDF</button>
+
+<script>
+function generatePDF() {
+    const resume = document.getElementById('resume');
+    html2pdf().from(resume).set({ filename: 'Resume.pdf' }).save();
+}
+</script>
+</body>
+</html>

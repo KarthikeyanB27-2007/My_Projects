@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume Builder</title>
+<style>
+body { font-family: Arial; padding: 30px; }
+input, textarea { width: 100%; margin: 10px 0; padding: 10px; }
+button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; }
+</style>
+</head>
+<body>
+<h1>Resume Builder</h1>
+<form method="POST" action="/">
+  <label>Name:</label>
+  <input type="text" name="name" required>
+
+  <label>Email:</label>
+  <input type="email" name="email" required>
+
+  <label>Phone:</label>
+  <input type="text" name="phone" required>
+
+  <label>Career Objective:</label>
+  <textarea name="objective"></textarea>
+
+  <label>Skills (comma-separated):</label>
+  <input type="text" name="skills">
+
+  <label>Education:</label>
+  <textarea name="education"></textarea>
+
+  <label>Experience:</label>
+  <textarea name="experience"></textarea>
+
+  <button type="submit">Generate Resume</button>
+</form>
+</body>
+</html>
