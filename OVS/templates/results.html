@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <ul>
+        {% for candidate in candidates %}
+            <li>{{ candidate.name }} ({{ candidate.party }}): {{ candidate.votes }} votes</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Add More Candidates</a>
+</body>
+</html>

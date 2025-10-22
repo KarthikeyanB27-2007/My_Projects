@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Candidates</title>
+</head>
+<body>
+    <h1>Add Candidates</h1>
+    <form action="/add_candidate" method="post">
+        <label>Candidate Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label>Party Name:</label>
+        <input type="text" name="party" required><br><br>
+
+        <input type="submit" value="Add Candidate">
+    </form>
+
+    <h3>Current Candidates:</h3>
+    <ul>
+        {% for candidate in candidates %}
+            <li>{{ candidate.name }} ({{ candidate.party }})</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/voting">Proceed to Voting</a>
+</body>
+</html>
